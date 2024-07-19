@@ -1,0 +1,17 @@
+{% extends "basetotal.html" %}
+
+{% block titulo %}
+Perfil - {{ usuario }}
+{% endblock %}
+
+{% block body %}
+
+<body>
+<h1>perfil do usuario: {{ usuario }}</h1> <! passa o nome do usuario do main para ele jogar o site com o nome do usuario>
+
+<a href= "{{ url_for('homepage') }}"> Sair</a> <! Tem que colocar o http para ele ir para a pagina desejada>
+<! portanto essa {{ url_for('homepage') }} ele pega o que está dentro da variavel perfil e mesmo mudando o nome para exemplo /homepage ou /telainicial nao precisa ficar alterando>
+
+</body>
+{% endblock %}
+

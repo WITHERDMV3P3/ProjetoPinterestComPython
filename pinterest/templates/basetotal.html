@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block titulo %} <! isso fica dinamico com essa parte do titulo>
+        FakePinterest
+        {% endblock %}
+    </title>
+</head>
+{% block body %} <! isso fica dinamico com essa parte do body e com isso ele pode se repetir mudando apenas o titulo e o body >
+<body>
+<h1>Meu primeiro site no ar</h1>
+
+<h2>Teste</h2> <! p ele cria um paragrafo e h ele cria um titulo e colocando h1 e h2 ele cria um titulo e subtitulo>
+</body>
+{% endblock %}
+</html>
