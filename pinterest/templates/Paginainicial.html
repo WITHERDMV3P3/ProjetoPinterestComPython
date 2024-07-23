@@ -9,5 +9,22 @@ FakePinterest
 <h1>Meu primeiro site no ar</h1>
 
 <h2>Teste</h2> <! p ele cria um paragrafo e h ele cria um titulo e colocando h1 e h2 ele cria um titulo e subtitulo>
+
+{% block formulario %}
+<form method="POST">
+  {{ form.csrf_token }} <! SISTEMA DE SEGURANÇA DE FORMULARIO PARA NÃO TER INVASÃO>
+
+    {{ form.email.label() }}
+    {{ form.email() }}
+
+    {{ form.senha.label() }}
+    {{ form.senha() }}
+
+    {{ form.botao_confirmacao() }}
+
+
+
+</form>
+{% endblock %}
 </body>
 {% endblock %}

@@ -1,0 +1,32 @@
+{% extends "Paginainicial.html" %}
+
+{% block titulo %}
+Criar Conta = FakePinterest
+{% endblock %}
+
+{% block formulario %} <! ele muda apenas o campo do block que está o nome formulario>
+
+<form method="POST">
+  {{ form.csrf_token }} <! SISTEMA DE SEGURANÇA DE FORMULARIO PARA NÃO TER INVASÃO>
+
+    {{ form.email.label() }}
+    {{ form.email() }}
+
+    {{ form.nomeusuario.label() }}
+    {{ form.nomeusuario() }}
+
+    {{ form.senha.label() }}
+    {{ form.senha() }}
+
+    {{ form.confirmacaosenha.label() }}
+    {{ form.confirmacaosenha() }}
+
+
+    {{ form.botao_confirmacao() }}
+
+
+
+</form>
+
+
+{% endblock %}

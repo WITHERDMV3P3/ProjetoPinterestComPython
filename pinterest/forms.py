@@ -12,12 +12,13 @@ class Formulariologin(FlaskForm):
 
 class FormularioCriarConta(FlaskForm):
     email =  StringField("E-mail", validators= [DataRequired(), Email() ])
-    nomedousuario=  StringField("Nome de Usuário", validators= [DataRequired()])
+    nomeusuario =  StringField("Nome de Usuário", validators= [DataRequired()])
     senha = PasswordField("Senha", validators= [DataRequired(), Length(6,20)])
-    confirmacaosenha= PasswordField("Senha", validators= [DataRequired(), EqualTo("senha")])
+    confirmacaosenha = PasswordField("Confirmar Senha", validators= [DataRequired(), EqualTo("senha")])
     botao_confirmacao = SubmitField("Criar Conta")
 
     def validate_email(self, email):  #precisa do validade_nome do campo para validaçao
         usuario = Usuario.query.filter_by(email = email.data).first()
         if usuario:
             return ValidationError("Email já cadastrado, faça login para continuar")
+
