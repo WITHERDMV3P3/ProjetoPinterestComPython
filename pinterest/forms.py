@@ -1,7 +1,7 @@
 #criar formularios do site
 
 from flask_wtf import FlaskForm # estrutura da classe do formulario
-from wtforms import StringField, PasswordField, SubmitField #campos de texto, senha e botao para login
+from wtforms import StringField, PasswordField, SubmitField, FileField #campos de texto, senha e botao para login
 from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError #validadores de campos o DatRequered ele tem o campo obrigatorio, o Equal to é para verificar se o campo tem a mesma senha exemplo
 from pinterest.models import Usuario
 
@@ -22,3 +22,6 @@ class FormularioCriarConta(FlaskForm):
         if usuario:
             return ValidationError("Email já cadastrado, faça login para continuar")
 
+class FormFotos(FlaskForm):
+    foto= FileField("foto", validators=[DataRequired()])
+    botao_confirmacao = SubmitField("Enviar")

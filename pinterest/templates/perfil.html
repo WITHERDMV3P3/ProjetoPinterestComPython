@@ -7,10 +7,24 @@ Perfil - {{ usuario }}
 {% block body %}
 
 <body>
-<h1>perfil do usuario: {{ usuario }}</h1> <! passa o nome do usuario do main para ele jogar o site com o nome do usuario>
+
+{{% if form %}}
+<form method="POST" enctype="multipart/form-data"> <! o enctype ele trata o arquivo que ele vai ler, faz com que ele lê e receba o arquivo de imagem>
+
+
+</form>
+{{% endform %}}
+
+<h1>perfil do usuario: {{ usuario.nomeusuario }}</h1> <! passa o nome do usuario do main para ele jogar o site com o nome do usuario>
 
 <a href= "{{ url_for('sair') }}"> Sair</a> <! Tem que colocar o http para ele ir para a pagina desejada>
 <! portanto essa {{ url_for('sair') }} ele pega o que está dentro da variavel perfil e mesmo mudando o nome para exemplo /homepage ou /telainicial nao precisa ficar alterando>
+
+<img src="{{ url_for('static', filename = 'fotos.posts/default.png') }}"> <! ADICIONAR IMAGENS NO SITE PEGANDO A URL DA PASTA ONDE ESTÁ O ARQUIVO QUE ESTARA ESTATICO NO SITE>
+
+{% for foto in usuario.fotos %}
+
+{% endfor %}
 
 </body>
 {% endblock %}
